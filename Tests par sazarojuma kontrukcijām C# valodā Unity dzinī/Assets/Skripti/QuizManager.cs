@@ -3,14 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class QuizManager : MonoBehaviour {
+	public List<JautajumiUnAtbildes> JuA;
+	public GameObject[] opcijas;
+	public int currentJautajums;
 
-	// Use this for initialization
-	void Start () {
+	public Text JautajumiTxt;
+
+
+	private void Start()
+	{
+		generateJautajumus();
+	}
+
+	public void Pareizi()
+	{
 		
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	void SetAtbildes()
+	{
+		for (int i = 0; i < opcijas.Length; i++) {
+			opcijas [i].GetComponent<Atbildes> ().irPareizs = false;
+			opcijas [i].transform.GetChild (0).GetComponent<Text> ().text = JuA [currentJautajums].Atbildes[i];
+
+			if (JuA [currentJautajums].PareizasAtbildes == i + 1) {
+				options[i].GetComponent<Atbildes> ().irPareizs = true;
+			}
+		}
+	}
+
+	void generateJautajumus()
+	{
+		currentJautajums = Random.Range (0, JuA.Count);
+
+		JautajumiTxt.text = JuA [currentJautajums].Jautajumi;
+		SetAtbildes();
+
+		JuA.RemoveAt (currentJautajums);
+
 	}
 }

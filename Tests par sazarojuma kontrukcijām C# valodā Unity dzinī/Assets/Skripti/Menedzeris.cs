@@ -19,4 +19,24 @@ public class Menedzeris : MonoBehaviour
 	{
 		Application.LoadLevel(Application.loadedLevel);
 	}
+
+
+
+	public void pareizaAtbilde()
+	{
+		if (currentLimenis + 1 != Limeni.Length) {
+			Limeni[currentLimenis].SetActive(false);
+
+			currentLimenis++;
+			Limeni [currentLimenis].SetActive (true);
+		}
+		else
+		{
+			Beigas.SetActive(true);
+			Limeni[currentLimenis].SetActive(false);
+		}
+	}
+
+
+
 }

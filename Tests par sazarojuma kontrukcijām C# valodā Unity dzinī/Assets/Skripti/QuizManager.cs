@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuizManager : MonoBehaviour {
 	public List<JautajumiUnAtbildes> JuA;
@@ -17,7 +18,8 @@ public class QuizManager : MonoBehaviour {
 
 	public void Pareizi()
 	{
-		
+		JuA.RemoveAt(currentJautajums);
+		generateJautajumus();
 	}
 
 	void SetAtbildes()
@@ -27,7 +29,7 @@ public class QuizManager : MonoBehaviour {
 			opcijas [i].transform.GetChild (0).GetComponent<Text> ().text = JuA [currentJautajums].Atbildes[i];
 
 			if (JuA [currentJautajums].PareizasAtbildes == i + 1) {
-				options[i].GetComponent<Atbildes> ().irPareizs = true;
+				opcijas[i].GetComponent<Atbildes> ().irPareizs = true;
 			}
 		}
 	}
@@ -39,7 +41,6 @@ public class QuizManager : MonoBehaviour {
 		JautajumiTxt.text = JuA [currentJautajums].Jautajumi;
 		SetAtbildes();
 
-		JuA.RemoveAt (currentJautajums);
 
 	}
 }

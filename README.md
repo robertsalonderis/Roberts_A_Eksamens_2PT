@@ -1,4 +1,4 @@
-:1st_place_medal: # Roberts_A_Eksamens_2PT :1st_place_medal:
+# Roberts_A_Eksamens_2PT :1st_place_medal:
 Eksāmena darbs par sazarojuma konstrukcijām strādājot ar C# programmēšanas valodu Unity dzinī, kurā būs mācību materiāls, tests par mācības materiāla informāciju un arī testēšanas žurnāls, kurā testēs elektriso testa funkcionalitātes.
 
 ![Tēmas attēls](https://miro.medium.com/max/1200/1*wsCXITI2FGuSM0xxKqIRyw.png)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Menedzeris : MonoBehaviour
 {
 
-	public GameObject[] Limeni;
+	public GameObject[] Limeni;//masīvs līmeņiem
 	public GameObject EkranaAties, Beigas;
 
 	int currentLimenis;
@@ -24,11 +24,11 @@ public class Menedzeris : MonoBehaviour
 
 	public void pareizaAtbilde()
 	{
-		if (currentLimenis + 1 != Limeni.Length) {
-			Limeni[currentLimenis].SetActive(false);
+		if (currentLimenis + 1 != Limeni.Length) {//If pārbauda vai neatrodas pēdejā līmenī
+			Limeni[currentLimenis].SetActive(false);//Aktivizē pašreizējo līmeni
 
-			currentLimenis++;
-			Limeni [currentLimenis].SetActive (true);
+			currentLimenis++;//atjaunina pašreizējā līmeņa vērtību par 1
+			Limeni [currentLimenis].SetActive (true);//Aktivizē nākošo līmeni
 		}
 		else
 		{
